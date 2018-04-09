@@ -8,8 +8,9 @@ import (
 )
 
 func ipHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "text/plain; charset=UTF-8")
 	hp := r.RemoteAddr
-	fmt.Fprintf(w, hp)
+	fmt.Fprintf(w, hp+"\n")
 }
 
 func main() {
